@@ -1,14 +1,11 @@
 
 import express from 'express';
 import dotenv from 'dotenv';
-import path from 'path';
 import cors from 'cors';
-dotenv.config({path: path.resolve('../../../.env')});
+dotenv.config();
 const app = express();
 import stripe from 'stripe';
 console.log(process.env.VITE_STRIPE_SECRET_KEY);
-// console.log(path.resolve('../../../.env'));
-
 const stripeInstance = stripe(process.env.VITE_STRIPE_SECRET_KEY); 
 app.use(cors());
 app.use(express.json());
