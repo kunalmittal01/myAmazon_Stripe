@@ -38,6 +38,9 @@ app.post('/create-checkout-session', async (req, res) => {
       success_url: `${process.env.VITE_HOST}/payment`,
       cancel_url: `${process.env.VITE_DEPHOST}/cart`,
       currency: 'usd', 
+      payment_intent_data: {
+        setup_future_usage: 'off_session', // Avoid unnecessary prompts
+    },
       // amount: total,
       metadata: {
         email: email,
