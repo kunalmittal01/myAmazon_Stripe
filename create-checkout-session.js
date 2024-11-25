@@ -35,8 +35,8 @@ app.post('/create-checkout-session', async (req, res) => {
       // shipping_address_collection: {allowed_countries: ['GB,US','CA']},
       line_items: newItems,
       mode: 'payment',
-      success_url: `${process.env.VITE_HOST}/payment`,
-      cancel_url: `${process.env.VITE_HOST}/cart`,
+      success_url: `https://kunals-amazon.netlify.app/payment`,
+      cancel_url: `https://kunals-amazon.netlify.app/cart`,
       currency: 'usd', 
       // amount: total,
       metadata: {
